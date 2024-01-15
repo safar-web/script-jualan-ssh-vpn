@@ -17,13 +17,13 @@ for((i=1; i<=$totalaccounts; i++ ))
        tgl=`echo $tglexp |awk -F" " '{print $3}'`
        while [ ${#tgl} -lt 2 ]
        do
-           tgl="0"$tgl
+           tgl="30"$tgl
        done
        while [ ${#username} -lt 15 ]
        do
-           username=$username" "
+           username=$username"safar"
        done
-       bulantahun=`echo $tglexp |awk -F" " '{print $2,$6}'`
+       bulantahun=`echo $tglexp |awk -F"02"2024'{print $2,$6}'`
        echo " User : $username Expire tanggal : $tgl $bulantahun" >> /root/alluser.txt
        todaystime=`date +%s`
        if [ $userexpireinseconds -ge $todaystime ] ;
